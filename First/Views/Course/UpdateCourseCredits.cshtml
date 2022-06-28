@@ -1,0 +1,35 @@
+﻿@model First.Models.Course
+
+@{
+    ViewBag.Title = "UpdateCourseCredits";
+}
+
+<h2>UpdateCourseCredits</h2>
+
+@if (ViewBag.RowsAffected == null)
+{
+    using (Html.BeginForm())
+    {
+        <p>
+            enter a number to multiply every course's credits by: @Html.TextBox("multiplier")
+        </p>
+        <p>
+            <input type="submit" value="Update" />
+        </p>
+    }
+}
+
+@if (ViewBag.RowsAffected != null)
+{
+    <p>
+        Number of rows updated: @ViewBag.RowsAffected
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to list", "Index")
+</div>
+
+
+
+
